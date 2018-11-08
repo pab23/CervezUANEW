@@ -39,7 +39,7 @@ public IFacturaCAD get_IFacturaCAD ()
         return this._IFacturaCAD;
 }
 
-public int New_ (int p_pedido, string p_importe, string p_direccion, CervezUAGenNHibernate.Enumerated.CervezUA.MetodoPagoEnum p_metodoPago)
+public int New_ (int p_pedido, double p_importe, string p_direccion, CervezUAGenNHibernate.Enumerated.CervezUA.MetodoPagoEnum p_metodoPago)
 {
         FacturaEN facturaEN = null;
         int oid;
@@ -66,7 +66,7 @@ public int New_ (int p_pedido, string p_importe, string p_direccion, CervezUAGen
         return oid;
 }
 
-public void Modify (int p_Factura_OID, string p_importe, string p_direccion, CervezUAGenNHibernate.Enumerated.CervezUA.MetodoPagoEnum p_metodoPago)
+public void Modify (int p_Factura_OID, double p_importe, string p_direccion, CervezUAGenNHibernate.Enumerated.CervezUA.MetodoPagoEnum p_metodoPago)
 {
         FacturaEN facturaEN = null;
 

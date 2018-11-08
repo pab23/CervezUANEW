@@ -22,7 +22,7 @@ private int id;
 /**
  *	Atributo importe
  */
-private string importe;
+private double importe;
 
 
 
@@ -55,7 +55,7 @@ public virtual int Id {
 
 
 
-public virtual string Importe {
+public virtual double Importe {
         get { return importe; } set { importe = value;  }
 }
 
@@ -81,7 +81,7 @@ public FacturaEN()
 
 
 
-public FacturaEN(int id, CervezUAGenNHibernate.EN.CervezUA.PedidoEN pedido, string importe, string direccion, CervezUAGenNHibernate.Enumerated.CervezUA.MetodoPagoEnum metodoPago
+public FacturaEN(int id, CervezUAGenNHibernate.EN.CervezUA.PedidoEN pedido, double importe, string direccion, CervezUAGenNHibernate.Enumerated.CervezUA.MetodoPagoEnum metodoPago
                  )
 {
         this.init (Id, pedido, importe, direccion, metodoPago);
@@ -94,7 +94,7 @@ public FacturaEN(FacturaEN factura)
 }
 
 private void init (int id
-                   , CervezUAGenNHibernate.EN.CervezUA.PedidoEN pedido, string importe, string direccion, CervezUAGenNHibernate.Enumerated.CervezUA.MetodoPagoEnum metodoPago)
+                   , CervezUAGenNHibernate.EN.CervezUA.PedidoEN pedido, double importe, string direccion, CervezUAGenNHibernate.Enumerated.CervezUA.MetodoPagoEnum metodoPago)
 {
         this.Id = id;
 

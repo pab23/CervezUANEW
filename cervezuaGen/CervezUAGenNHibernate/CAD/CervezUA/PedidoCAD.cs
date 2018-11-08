@@ -258,5 +258,36 @@ public System.Collections.Generic.IList<PedidoEN> ReadAll (int first, int size)
 
         return result;
 }
+
+public System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.PedidoEN> FiltrarPorEstado (CervezUAGenNHibernate.Enumerated.CervezUA.EstadoPedidoEnum ? state)
+{
+        System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.PedidoEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM PedidoEN self where FROM PedidoEN where estado = :state";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("PedidoENfiltrarPorEstadoHQL");
+                query.SetParameter ("state", state);
+
+                result = query.List<CervezUAGenNHibernate.EN.CervezUA.PedidoEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is CervezUAGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new CervezUAGenNHibernate.Exceptions.DataLayerException ("Error in PedidoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
 }
 }

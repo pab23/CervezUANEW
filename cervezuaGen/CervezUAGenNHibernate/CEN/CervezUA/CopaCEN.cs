@@ -39,7 +39,7 @@ public ICopaCAD get_ICopaCAD ()
         return this._ICopaCAD;
 }
 
-public int New_ (string p_nombre, int p_stock, string p_precio, double p_valMedia, string p_descripcion, string p_imagen, string p_marca, double p_capacidad, CervezUAGenNHibernate.Enumerated.CervezUA.TipoCopaEnum p_forma)
+public int New_ (string p_nombre, int p_stock, double p_precio, double p_valMedia, string p_descripcion, string p_imagen, string p_marca, double p_capacidad, CervezUAGenNHibernate.Enumerated.CervezUA.TipoCopaEnum p_forma)
 {
         CopaEN copaEN = null;
         int oid;
@@ -70,7 +70,7 @@ public int New_ (string p_nombre, int p_stock, string p_precio, double p_valMedi
         return oid;
 }
 
-public void Modify (int p_Copa_OID, string p_nombre, int p_stock, string p_precio, double p_valMedia, string p_descripcion, string p_imagen, string p_marca, double p_capacidad, CervezUAGenNHibernate.Enumerated.CervezUA.TipoCopaEnum p_forma)
+public void Modify (int p_Copa_OID, string p_nombre, int p_stock, double p_precio, double p_valMedia, string p_descripcion, string p_imagen, string p_marca, double p_capacidad, CervezUAGenNHibernate.Enumerated.CervezUA.TipoCopaEnum p_forma)
 {
         CopaEN copaEN = null;
 
@@ -112,6 +112,10 @@ public System.Collections.Generic.IList<CopaEN> ReadAll (int first, int size)
 
         list = _ICopaCAD.ReadAll (first, size);
         return list;
+}
+public System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.CopaEN> DevuelvePorTipo (CervezUAGenNHibernate.Enumerated.CervezUA.TipoCopaEnum ? tipo)
+{
+        return _ICopaCAD.DevuelvePorTipo (tipo);
 }
 }
 }

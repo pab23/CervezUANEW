@@ -74,5 +74,9 @@ public System.Collections.Generic.IList<PedidoEN> ReadAll (int first, int size)
         list = _IPedidoCAD.ReadAll (first, size);
         return list;
 }
+public System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.PedidoEN> FiltrarPorEstado (CervezUAGenNHibernate.Enumerated.CervezUA.EstadoPedidoEnum ? state)
+{
+        return _IPedidoCAD.FiltrarPorEstado (state);
+}
 }
 }

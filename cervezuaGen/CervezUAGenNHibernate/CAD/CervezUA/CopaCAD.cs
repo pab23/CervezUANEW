@@ -275,5 +275,36 @@ public System.Collections.Generic.IList<CopaEN> ReadAll (int first, int size)
 
         return result;
 }
+
+public System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.CopaEN> DevuelvePorTipo (CervezUAGenNHibernate.Enumerated.CervezUA.TipoCopaEnum ? tipo)
+{
+        System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.CopaEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM CopaEN self where FROM CopaEN where forma = :tipo";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("CopaENdevuelvePorTipoHQL");
+                query.SetParameter ("tipo", tipo);
+
+                result = query.List<CervezUAGenNHibernate.EN.CervezUA.CopaEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is CervezUAGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new CervezUAGenNHibernate.Exceptions.DataLayerException ("Error in CopaCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
 }
 }

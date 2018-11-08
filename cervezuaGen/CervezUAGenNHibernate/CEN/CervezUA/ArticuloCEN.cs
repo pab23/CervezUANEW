@@ -55,7 +55,7 @@ public System.Collections.Generic.IList<ArticuloEN> ReadAll (int first, int size
         list = _IArticuloCAD.ReadAll (first, size);
         return list;
 }
-public int New_ (string p_nombre, int p_stock, string p_precio, double p_valMedia, string p_descripcion, string p_imagen, string p_marca)
+public int New_ (string p_nombre, int p_stock, double p_precio, double p_valMedia, string p_descripcion, string p_imagen, string p_marca)
 {
         ArticuloEN articuloEN = null;
         int oid;
@@ -82,7 +82,7 @@ public int New_ (string p_nombre, int p_stock, string p_precio, double p_valMedi
         return oid;
 }
 
-public void Modify (int p_Articulo_OID, string p_nombre, int p_stock, string p_precio, double p_valMedia, string p_descripcion, string p_imagen, string p_marca)
+public void Modify (int p_Articulo_OID, string p_nombre, int p_stock, double p_precio, double p_valMedia, string p_descripcion, string p_imagen, string p_marca)
 {
         ArticuloEN articuloEN = null;
 
@@ -105,6 +105,11 @@ public void Destroy (int id
                      )
 {
         _IArticuloCAD.Destroy (id);
+}
+
+public System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.ArticuloEN> DevuelvePorMarca (string brand)
+{
+        return _IArticuloCAD.DevuelvePorMarca (brand);
 }
 }
 }

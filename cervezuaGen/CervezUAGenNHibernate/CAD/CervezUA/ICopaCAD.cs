@@ -29,5 +29,8 @@ CopaEN ReadOID (int id
 
 
 System.Collections.Generic.IList<CopaEN> ReadAll (int first, int size);
+
+
+System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.CopaEN> DevuelvePorTipo (CervezUAGenNHibernate.Enumerated.CervezUA.TipoCopaEnum ? tipo);
 }
 }

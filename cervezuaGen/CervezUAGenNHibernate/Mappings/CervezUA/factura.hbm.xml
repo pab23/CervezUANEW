@@ -12,7 +12,7 @@
 						</id>
 			
 					
-					<property name="Importe" type="currency"> 
+					<property name="Importe" type="double"> 
 						<column name="importe"  not-null="true"/>
 					</property>
 					<property name="Direccion" type="string"> 

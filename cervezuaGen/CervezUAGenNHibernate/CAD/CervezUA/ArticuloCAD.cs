@@ -286,5 +286,36 @@ public void Destroy (int id
                 SessionClose ();
         }
 }
+
+public System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.ArticuloEN> DevuelvePorMarca (string brand)
+{
+        System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.ArticuloEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM ArticuloEN self where FROM ArticuloEN where marca = :brand";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("ArticuloENdevuelvePorMarcaHQL");
+                query.SetParameter ("brand", brand);
+
+                result = query.List<CervezUAGenNHibernate.EN.CervezUA.ArticuloEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is CervezUAGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new CervezUAGenNHibernate.Exceptions.DataLayerException ("Error in ArticuloCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
 }
 }

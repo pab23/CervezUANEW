@@ -11,7 +11,7 @@ using CervezUAGenNHibernate.EN.CervezUA;
 using CervezUAGenNHibernate.CAD.CervezUA;
 
 
-/*PROTECTED REGION ID(usingCervezUAGenNHibernate.CEN.CervezUA_Pedido_quitaProducto) ENABLED START*/
+/*PROTECTED REGION ID(usingCervezUAGenNHibernate.CEN.CervezUA_Pedido_calculaPrecio) ENABLED START*/
 //  references to other libraries
 /*PROTECTED REGION END*/
 
@@ -19,14 +19,17 @@ namespace CervezUAGenNHibernate.CEN.CervezUA
 {
 public partial class PedidoCEN
 {
-public void QuitaProducto (int p_oid, CervezUAGenNHibernate.EN.CervezUA.LineaPedidoEN producto)
+public double CalculaPrecio (int p_oid)
 {
-        /*PROTECTED REGION ID(CervezUAGenNHibernate.CEN.CervezUA_Pedido_quitaProducto) ENABLED START*/
-
+        /*PROTECTED REGION ID(CervezUAGenNHibernate.CEN.CervezUA_Pedido_calculaPrecio) ENABLED START*/
+        double devuelve = 0;
         // Write here your custom code...
         PedidoEN pedido = ReadOID (p_oid);
 
-            pedido.Lineas.Remove(producto);
+        foreach (LineaPedidoEN linea in pedido.Lineas) {
+                devuelve += linea.Articulo.Precio * linea.Numero;
+        }
+        return devuelve;
 
         /*PROTECTED REGION END*/
 }

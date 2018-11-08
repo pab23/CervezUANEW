@@ -29,5 +29,10 @@ PedidoEN ReadOID (int id
 
 
 System.Collections.Generic.IList<PedidoEN> ReadAll (int first, int size);
+
+
+
+
+System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.PedidoEN> FiltrarPorEstado (CervezUAGenNHibernate.Enumerated.CervezUA.EstadoPedidoEnum ? state);
 }
 }

@@ -32,5 +32,6 @@
 		 </joined-subclass>
 		  
 		  <query name="CopaENReadAllHQL">from CopaEN</query>
+		  <query name="CopaENdevuelvePorTipoHQL"><![CDATA[FROM CopaEN where forma = :tipo]]></query>
 		</hibernate-mapping>
 	

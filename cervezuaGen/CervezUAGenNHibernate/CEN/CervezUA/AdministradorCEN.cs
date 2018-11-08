@@ -39,7 +39,7 @@ public IAdministradorCAD get_IAdministradorCAD ()
         return this._IAdministradorCAD;
 }
 
-public string New_ (string p_nUsuario, string p_email, Nullable<DateTime> p_fecNam, string p_nombre, string p_apellidos, string p_foto, CervezUAGenNHibernate.Enumerated.CervezUA.TipoUsuarioEnum p_tipo, String p_pass, string p_sueldo)
+public string New_ (string p_nUsuario, string p_email, Nullable<DateTime> p_fecNam, string p_nombre, string p_apellidos, string p_foto, CervezUAGenNHibernate.Enumerated.CervezUA.TipoUsuarioEnum p_tipo, String p_pass, double p_sueldo)
 {
         AdministradorEN administradorEN = null;
         string oid;
@@ -70,7 +70,7 @@ public string New_ (string p_nUsuario, string p_email, Nullable<DateTime> p_fecN
         return oid;
 }
 
-public void Modify (string p_Administrador_OID, string p_email, Nullable<DateTime> p_fecNam, string p_nombre, string p_apellidos, string p_foto, CervezUAGenNHibernate.Enumerated.CervezUA.TipoUsuarioEnum p_tipo, String p_pass, string p_sueldo)
+public void Modify (string p_Administrador_OID, string p_email, Nullable<DateTime> p_fecNam, string p_nombre, string p_apellidos, string p_foto, CervezUAGenNHibernate.Enumerated.CervezUA.TipoUsuarioEnum p_tipo, String p_pass, double p_sueldo)
 {
         AdministradorEN administradorEN = null;
 

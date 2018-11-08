@@ -10,14 +10,14 @@ public partial class AdministradorEN                                            
 /**
  *	Atributo sueldo
  */
-private string sueldo;
+private double sueldo;
 
 
 
 
 
 
-public virtual string Sueldo {
+public virtual double Sueldo {
         get { return sueldo; } set { sueldo = value;  }
 }
 
@@ -31,7 +31,7 @@ public AdministradorEN() : base ()
 
 
 
-public AdministradorEN(string nUsuario, string sueldo
+public AdministradorEN(string nUsuario, double sueldo
                        , string email, Nullable<DateTime> fecNam, string nombre, string apellidos, string foto, CervezUAGenNHibernate.Enumerated.CervezUA.TipoUsuarioEnum tipo, System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.PedidoEN> pedido, CervezUAGenNHibernate.EN.CervezUA.ValoracionEN valoracion, String pass
                        )
 {
@@ -45,7 +45,7 @@ public AdministradorEN(AdministradorEN administrador)
 }
 
 private void init (string nUsuario
-                   , string sueldo, string email, Nullable<DateTime> fecNam, string nombre, string apellidos, string foto, CervezUAGenNHibernate.Enumerated.CervezUA.TipoUsuarioEnum tipo, System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.PedidoEN> pedido, CervezUAGenNHibernate.EN.CervezUA.ValoracionEN valoracion, String pass)
+                   , double sueldo, string email, Nullable<DateTime> fecNam, string nombre, string apellidos, string foto, CervezUAGenNHibernate.Enumerated.CervezUA.TipoUsuarioEnum tipo, System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.PedidoEN> pedido, CervezUAGenNHibernate.EN.CervezUA.ValoracionEN valoracion, String pass)
 {
         this.NUsuario = nUsuario;
 

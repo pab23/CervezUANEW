@@ -29,5 +29,8 @@ void Modify (ArticuloEN articulo);
 
 void Destroy (int id
               );
+
+
+System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.ArticuloEN> DevuelvePorMarca (string brand);
 }
 }

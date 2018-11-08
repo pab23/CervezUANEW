@@ -39,7 +39,7 @@ public ICervezaCAD get_ICervezaCAD ()
         return this._ICervezaCAD;
 }
 
-public int New_ (string p_nombre, int p_stock, string p_precio, double p_valMedia, string p_descripcion, string p_imagen, string p_marca, double p_volumen, int p_unidades, double p_graduacion, CervezUAGenNHibernate.Enumerated.CervezUA.TipoCervezaEnum p_tipo)
+public int New_ (string p_nombre, int p_stock, double p_precio, double p_valMedia, string p_descripcion, string p_imagen, string p_marca, double p_volumen, int p_unidades, double p_graduacion, CervezUAGenNHibernate.Enumerated.CervezUA.TipoCervezaEnum p_tipo)
 {
         CervezaEN cervezaEN = null;
         int oid;
@@ -74,7 +74,7 @@ public int New_ (string p_nombre, int p_stock, string p_precio, double p_valMedi
         return oid;
 }
 
-public void Modify (int p_Cerveza_OID, string p_nombre, int p_stock, string p_precio, double p_valMedia, string p_descripcion, string p_imagen, string p_marca, double p_volumen, int p_unidades, double p_graduacion, CervezUAGenNHibernate.Enumerated.CervezUA.TipoCervezaEnum p_tipo)
+public void Modify (int p_Cerveza_OID, string p_nombre, int p_stock, double p_precio, double p_valMedia, string p_descripcion, string p_imagen, string p_marca, double p_volumen, int p_unidades, double p_graduacion, CervezUAGenNHibernate.Enumerated.CervezUA.TipoCervezaEnum p_tipo)
 {
         CervezaEN cervezaEN = null;
 

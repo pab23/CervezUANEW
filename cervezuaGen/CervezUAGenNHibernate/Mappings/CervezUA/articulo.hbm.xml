@@ -18,7 +18,7 @@
 					<property name="Stock" type="integer"> 
 						<column name="stock"  not-null="true"/>
 					</property>
-					<property name="Precio" type="currency"> 
+					<property name="Precio" type="double"> 
 						<column name="precio"  not-null="true"/>
 					</property>
 					<property name="ValMedia" type="double"> 
@@ -78,5 +78,6 @@
 		 </class>	
 		  
 		  <query name="ArticuloENReadAllHQL">from ArticuloEN</query>
+		  <query name="ArticuloENdevuelvePorMarcaHQL"><![CDATA[FROM ArticuloEN where marca = :brand]]></query>
 		</hibernate-mapping>
 	

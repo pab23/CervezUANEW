@@ -16,7 +16,7 @@
 
 			
 					
-					<property name="Sueldo" type="currency"> 
+					<property name="Sueldo" type="double"> 
 						<column name="sueldo"  not-null="true"/>
 					</property>
 			

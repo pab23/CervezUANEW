@@ -29,7 +29,7 @@ private int stock;
 /**
  *	Atributo precio
  */
-private string precio;
+private double precio;
 
 
 
@@ -96,7 +96,7 @@ public virtual int Stock {
 
 
 
-public virtual string Precio {
+public virtual double Precio {
         get { return precio; } set { precio = value;  }
 }
 
@@ -148,7 +148,7 @@ public ArticuloEN()
 
 
 
-public ArticuloEN(int id, string nombre, int stock, string precio, double valMedia, string descripcion, string imagen, string marca, System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.LineaPedidoEN> lineaPedido, System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.ValoracionEN> valoracion
+public ArticuloEN(int id, string nombre, int stock, double precio, double valMedia, string descripcion, string imagen, string marca, System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.LineaPedidoEN> lineaPedido, System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.ValoracionEN> valoracion
                   )
 {
         this.init (Id, nombre, stock, precio, valMedia, descripcion, imagen, marca, lineaPedido, valoracion);
@@ -161,7 +161,7 @@ public ArticuloEN(ArticuloEN articulo)
 }
 
 private void init (int id
-                   , string nombre, int stock, string precio, double valMedia, string descripcion, string imagen, string marca, System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.LineaPedidoEN> lineaPedido, System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.ValoracionEN> valoracion)
+                   , string nombre, int stock, double precio, double valMedia, string descripcion, string imagen, string marca, System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.LineaPedidoEN> lineaPedido, System.Collections.Generic.IList<CervezUAGenNHibernate.EN.CervezUA.ValoracionEN> valoracion)
 {
         this.Id = id;
 
